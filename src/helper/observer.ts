@@ -1,20 +1,20 @@
 export class ObserverHelper<Entity> {
-    private actions:{name?:string, action:()=>void}[] = [];
+    private observers:{name?:string[], action:()=>void}[] = [];
     constructor(protected data:Entity){}
 
-    subscribe(name?:string) {
+    subscribe(name?:string[]) {
         return (action:()=>void) => {
-            this.actions.push({name, action});
+            this.observers.push({name, action});
             return action;
         };
     }
-    unsubscribe(name:string) {
-        this.actions = this.actions.filter((action) => action.name !== name);
+    unsubscribe(name:string[]) {
+        this.observers = this.observers.filter((observer) => observer.name?.some((n) => name.includes(n)));
     }
     emitter(filter:(string|undefined)[] = []) {
-        this.actions.forEach((action) => {
-            if (filter.length === 0 || filter.includes(action.name)) {
-                action.action();
+        this.observers.forEach((observer) => {
+            if (filter.length === 0 || observer.name?.some((name) => filter.includes(name))){
+                observer.action();
             }
         });
     }

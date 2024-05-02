@@ -3,9 +3,9 @@ import {useSyncExternalStore} from 'react';
 
 export const messagesInMemoryStore = new MessagesInMemoryRepository([]);
 
-export const useMessagesInMemoryStore = (name?:string) => {
+export const useMessagesInMemoryStore = (notice?:string[]) => {
     return useSyncExternalStore(
-        messagesInMemoryStore.subscribe(name).bind(messagesInMemoryStore),
+        messagesInMemoryStore.subscribe(notice).bind(messagesInMemoryStore),
         messagesInMemoryStore.snapshot.bind(messagesInMemoryStore)
     );
 };
