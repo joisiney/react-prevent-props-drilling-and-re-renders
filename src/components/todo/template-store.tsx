@@ -5,14 +5,12 @@ import {Card} from '../ui/card';
 import {FooterTodo} from './footer';
 import {HeaderTodo} from './header';
 import {MessageStore} from './messages-store';
+import {parseEventToFormData} from './utils/parseEventToFormData';
 
 export const TemplateStoreTodo:FC = () => {
     const counterRef = useRef(0);
     const handleAddMessageStore = (event: FormEvent<HTMLFormElement>) => {
-        const formData = new FormData(event.currentTarget);
-        const data = Object.fromEntries(formData.entries()) as {content:string};
-        event.preventDefault();
-        event.currentTarget.reset();
+        const data = parseEventToFormData<{content:string}>(event);
         messagesInMemoryStore.add(new MessageEntity({
             id: Math.random(),
             content: data.content,
