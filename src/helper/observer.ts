@@ -4,16 +4,18 @@ export class ObserverHelper<Entity> {
 
     subscribe(name?:string[]) {
         return (action:()=>void) => {
-            this.observers.push({name, action});
-            return action;
+            const total = this.observers.length;
+            this.observers[total] = {name, action};
+            return () => {
+                this.observers = this.observers.filter((observer) => observer !== this.observers[total]);
+            };
         };
     }
-    unsubscribe(name:string[]) {
-        this.observers = this.observers.filter((observer) => observer.name?.some((n) => name.includes(n)));
-    }
+    
     emitter(filter:(string|undefined)[] = []) {
         this.observers.forEach((observer) => {
-            if (filter.length === 0 || observer.name?.some((name) => filter.includes(name))){
+            const canObserver = observer.name?.some((name) => filter.includes(name));
+            if (filter.length === 0 || canObserver){
                 observer.action();
             }
         });

@@ -1,14 +1,15 @@
+import {FooterTodo} from '@/components/todo/footer';
+import {HeaderTodo} from '@/components/todo/header';
+import {Card} from '@/components/ui/card';
 import {MessageEntity} from '@/entity/Message';
 import {messagesInMemoryStore} from '@/store/in-memory/messages';
+import {parseEventToFormData} from '@/utils/parseEventToFormData';
 import {FC, FormEvent, useRef} from 'react';
-import {Card} from '../ui/card';
-import {FooterTodo} from './footer';
-import {HeaderTodo} from './header';
-import {MessageStore} from './messages-store';
-import {parseEventToFormData} from './utils/parseEventToFormData';
+import {ListSampleStoreTodo} from './List';
 
-export const TemplateStoreTodo:FC = () => {
+export const SampleStoreTodoTemplate:FC = () => {
     const counterRef = useRef(0);
+    
     const handleAddMessageStore = (event: FormEvent<HTMLFormElement>) => {
         const data = parseEventToFormData<{content:string}>(event);
         messagesInMemoryStore.add(new MessageEntity({
@@ -20,7 +21,7 @@ export const TemplateStoreTodo:FC = () => {
     
     return <Card className='w-[440px]'>
         <HeaderTodo title='Chat (store)' description={`Veja as renderizações do seu componente! ( ${counterRef.current++}x )`} />
-        <MessageStore/>
+        <ListSampleStoreTodo/>
         <FooterTodo onSubmit={handleAddMessageStore}/>
     </Card>;
 };

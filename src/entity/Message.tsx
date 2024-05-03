@@ -15,7 +15,7 @@ export class MessageEntity {
     get content() {
         return this.fields.content;
     }
-    get toJson() {
+    toJSON() {
         return this.fields;
     }
 }
