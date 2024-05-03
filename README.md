@@ -1,4 +1,4 @@
-## Props Drilling
+## Props Drilling / re-renders
 
 Este repositório tem como objetivo mitigar renderizações desnecessárias no ReactJS, eliminando a dependência de componentes estarem dentro do mesmo contexto para acessar informações. A proposta é ter um `repository` central para gerenciar a(s) `entity`, acessível através de um `hook observer`. Esse `observer` notificará apenas os componentes interessados nas alterações das informações, garantindo que apenas eles sejam re-renderizados.
 
