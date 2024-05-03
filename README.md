@@ -4,7 +4,7 @@ Este repositório tem como objetivo mitigar renderizações desnecessárias no R
 
 Assista ao vídeo demonstrativo abaixo:
 
-[![Mastering Props Drilling: Enhancing Component Architecture](https://i.vimeocdn.com/video/1845848617-7e4de25285e5e86590e3fd65560c82f12bae983af89d52e937c72d09eb59c684-d?mw=1800&mh=1091&q=70)](https://vimeo.com/942328752 "Clique para Assistir!")
+[![Mastering Props Drilling: Enhancing Component Architecture](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714743540/Captura_de_Tela_2024-05-03_a%CC%80s_10.32.33_zzftoc.png)](https://vimeo.com/942328752 "Clique para Assistir!"){:target="_blank"}
 
 ## 🚧 Aviso de Construção 🚧
 
