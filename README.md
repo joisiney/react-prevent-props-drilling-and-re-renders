@@ -5,7 +5,7 @@ Este repositório tem como objetivo mitigar renderizações desnecessárias no R
 **Assista ao vídeo demonstrativo abaixo:**
 
 <a href="https://vimeo.com/942328752" target="_blank">
-    <img src="[https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714743540/Captura_de_Tela_2024-05-03_a%CC%80s_10.32.33_zzftoc.png](https://res-console.cloudinary.com/dmoi0mmuj/thumbnails/v1/image/upload/v1714743540/Q2FwdHVyYV9kZV9UZWxhXzIwMjQtMDUtMDNfYcyAc18xMC4zMi4zM196emZ0b2M=/drilldown)" style="max-width: 100%;">
+    <img src="https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714743540/Captura_de_Tela_2024-05-03_a%CC%80s_10.32.33_zzftoc.png" style="max-width: 100%;">
 </a>
 
 ## 🚧 Aviso de Construção 🚧
