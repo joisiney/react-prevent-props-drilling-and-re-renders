@@ -1,16 +1,27 @@
-## Props Drilling / re-render
 
-Observe o fluxograma abaixo: Ao adicionar/editar uma mensagem, a Context API solicita ao React avaliar as dependências e recriar os elementos necessários. Embora o DOM virtual otimize a recriação, o React ainda precisa avaliar se deve ou não recriar os componentes X, Y e Z, embora saibamos que isso não deveria ser necessário, pois eles não dependem dessa informação. Além disso, o fato de o React calcular o que deve ser reescrito ou não pode acionar a execução de `useMemo` ou `useEffects`, embora isso geralmente seja um erro do programador. Mas, por que nos preocupar com isso se o componente nem deveria saber dessa atualização, né?
+# Context API vs Observer: Um Confronto Empolgante
 
+Não podemos simplesmente colocá-los frente a frente e declarar um vencedor, já que cada um tem seu papel específico. No entanto, o padrão Observer ainda é largamente subexplorado no universo do React. Recentemente, enfrentei desafios que me levaram a uma análise profunda dessas duas abordagens.
+
+## Context API
 
 ![Fluxo do Observer](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714785779/context-api_jl7xhp.png)
 
+Dê uma olhada no diagrama acima: ao adicionar ou editar uma mensagem, a Context API pede ao React que reavalie as dependências e, se necessário, recrie os elementos. Em contextos mais complexos, isso pode ser tedioso e custoso para sua aplicação, especialmente em cenários onde passar propriedades através da árvore de componentes React é normal.
+
+![Fluxo do Observer](./docs/props-drilling.png)
+
+A Context API resolve o problema do "props drilling", mas o recálculo de dependências, como nos componentes X, Y e Z, muitas vezes é desnecessário, pois eles não dependem dessa informação.
+
+Nesse processo de recálculo de dependências, um ou outro `useEffect` pode ser acionado acidentalmente, resultando em um verdadeiro inferno de re-renderização (embora isso geralmente seja erro do programador). Mas por que nos preocuparmos com isso se o componente sequer deveria estar ciente dessa atualização, não é mesmo?
 
 ## Fluxo do Observer
 
-Vamos analisar o fluxograma abaixo: Trabalhando com `observers`, não há um contexto geral. Apenas os componentes que têm `observers` serão atualizados. Ao adicionar/editar, apenas os componentes com `observers` serão atualizados. Assim, o React não precisa considerar re-renderizar componentes fora desse escopo. Embora pareça ideal, há cenários em que esse fluxo não é adequado, como quando há uma grande quantidade de elementos que utilizam `observers`. Nesses casos, usar `context` ou similar é mais sensato. Porém, em situações com um número controlado de `observers`, o custo é significativamente menor do que recriar/recalcular todos os componentes dentro do contexto, além de evitar `props drilling` ou recálculo/execução desnecessária de `useMemo` ou `useEffects`.
-
 ![Fluxo da Context API](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714785779/observer_g8jexw.png)
+
+Vamos analisar o fluxograma acima: trabalhando com `observers`, não há um contexto geral. Apenas os componentes que têm `observers` serão atualizados. Ao adicionar/editar, apenas os componentes com `observers` serão atualizados. Assim, como a Context API resolve o problema de props drilling, os observers também o resolvem, porém com um ganho extra de não re-renderizar componentes que não estão ouvindo, como os componentes X, Y e Z. Eles sequer saberão que houve alteração no estado.
+
+Embora tenhamos um ganho de performance significativo, há cenários em que esse fluxo não é adequado, como quando há uma grande quantidade de elementos que utilizam `observers`. Neste cenário, recriar tudo é mais barato do que observar alteração de elemento por elemento.
 
 ## 🚀 Tecnologias
 
