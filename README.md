@@ -12,6 +12,39 @@ Vamos analisar o fluxograma abaixo: Trabalhando com `observers`, não há um con
 
 ![Fluxo da Context API](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714785779/observer_g8jexw.png)
 
+## 🚀 Tecnologias
+
+Principais tecnologias que utilizamos para desenvolver esta aplicação
+
+- [React JS](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Chadcn](https://ui.shadcn.com/)
+- [Vite](https://vitejs.dev/)
+- [Radix](https://www.radix-ui.com/)
+- [React Router](https://reactrouter.com/en/main)
+
+
+## 💻 Começando
+
+**Clone o projeto e acesse a pasta**
+
+```bash
+$ git clone https://github.com/joisiney/react-prevent-props-drilling-and-re-renders && cd react-prevent-props-drilling-and-re-renders
+```
+
+**Siga os passos abaixo**
+
+```bash
+# Instale as dependências
+$ yarn
+
+# Para finalizar, execute
+$ yarn dev
+
+# Muito bem, o projeto foi iniciado!
+```
+
 ## Desvendando o Funcionamento!
 
 Se você já está familiarizado com a programação orientada a domínio, então está no seu território! Este processo é simples e emocionante de trabalhar. Aqui está como você pode começar:
@@ -205,6 +238,39 @@ No vídeo abaixo, observamos que o lado do `observer` (store) realiza re-renderi
     <img src="https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714743540/Captura_de_Tela_2024-05-03_a%CC%80s_10.32.33_zzftoc.png" style="max-width: 100%;">
 </a>
 
-## 🚧 Aviso de Construção 🚧
+## 🤔 Como contribuir
 
-Gostaríamos de informar que nosso repositório de soluções para o desafio de Props Drilling ainda está em desenvolvimento. Estamos trabalhando arduamente para criar uma abordagem eficaz e elegante para lidar com essa questão no React. Pedimos paciência enquanto refinamos nossas soluções e testamos sua robustez. Fiquem atentos para futuras atualizações e agradecemos pelo apoio contínuo!
+**Faça um fork deste repositório**
+
+```bash
+# Fork usando a linha de comando oficial do GitHub
+# Se você não tiver a CLI do GitHub, use o site para fazer isso.
+
+$ gh repo fork joisiney/react-prevent-props-drilling-and-re-renders
+```
+
+**Siga os passos abaixo**
+
+```bash
+# Clone seu fork
+$ git clone your-fork-url && cd react-prevent-props-drilling-and-re-renders
+
+# Crie uma ramificação com a sua feature
+$ git checkout -b my-feature
+
+# Faça commit das suas alterações
+$ git commit -m 'Feature: My new feature'
+
+# Envie seu código para a branch remota
+$ git push origin my-feature
+```
+
+Depois que sua solicitação pull for mesclada, você pode excluir sua ramificação
+
+## 📝 Licença
+
+Este projeto está licenciado sob a Licença MIT - consulte  [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+Feito com 💚 por Joisiney 🤝 [Veja nosso linkedin](https://www.linkedin.com/in/joisiney/)
