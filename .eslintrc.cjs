@@ -41,6 +41,7 @@ module.exports = {
             }
         ],
         semi: 'warn',
+        '@typescript-eslint/no-namespace': 'off',
         'arrow-parens': ['warn', 'always'],
         'comma-dangle': 'off',
         'prefer-const': 'error',

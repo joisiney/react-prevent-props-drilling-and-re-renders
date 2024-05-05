@@ -12,6 +12,78 @@ Vamos analisar o fluxograma abaixo: Trabalhando com `observers`, não há um con
 
 ![Fluxo da Context API](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714785779/observer_g8jexw.png)
 
+## Mapa mental do projeto
+
+```
+.
+├── app.tsx
+├── globals.css
+├── main.tsx
+├── application
+│   ├── entities
+│   │   ├── message.ts
+│   │   └── user.ts
+│   ├── helpers
+│   │   └── observer
+│   │       ├── create.hook.ts
+│   │       └── index.ts
+│   ├── models
+│   │   ├── message.ts
+│   │   └── user.ts
+│   ├── observers
+│   │   └── in-memory
+│   │       ├── messages.ts
+│   │       └── user.ts
+│   └── repositories
+│       └── in-memory
+│           ├── messages.ts
+│           └── user.ts
+├── components
+├── contexts
+│   └── message
+│       ├── hooks
+│       │   ├── index.ts
+│       │   ├── message.ts
+│       │   └── user.ts
+│       ├── index.context.ts
+│       ├── index.dto.ts
+│       ├── index.hook.ts
+│       └── index.tsx
+├── pages
+│   ├── home.tsx
+│   └── profile
+│       ├── index.hook.ts
+│       └── index.tsx
+├── templates
+│   ├── header.tsx
+│   ├── layout.tsx
+│   ├── todo-context
+│   │   ├── components
+│   │   │   ├── message
+│   │   │   │   ├── index.dto.ts
+│   │   │   │   ├── index.hook.ts
+│   │   │   │   └── index.tsx
+│   │   │   └── messages
+│   │   │       ├── index.hook.ts
+│   │   │       └── index.tsx
+│   │   ├── index.hook.ts
+│   │   └── index.tsx
+│   └── todo-observer
+│       ├── components
+│       │   ├── message
+│       │   │   ├── index.dto.ts
+│       │   │   ├── index.hook.ts
+│       │   │   └── index.tsx
+│       │   └── messages
+│       │       ├── index.hook.ts
+│       │       └── index.tsx
+│       ├── index.hook.ts
+│       └── index.tsx
+└── utils
+    ├── cn.ts
+    └── parseEventToFormData.ts
+```
+
 ## Vídeo de demonstração:
 
 No vídeo abaixo, observamos que o lado do `observer` (store) realiza re-renderizações muito menos frequentes em comparação com o lado que utiliza `context`. Isso ocorre devido à natureza do `observer`, que atualiza apenas os componentes que estão diretamente relacionados às mudanças nos dados, enquanto o `context` pode acionar re-renderizações em toda a árvore de componentes afetados, mesmo que nem todos necessitem ser atualizados. Essa diferença na eficiência de re-renderização destaca a vantagem do `observer` em manter uma renderização cirurgica.
