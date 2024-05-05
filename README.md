@@ -9,7 +9,7 @@ Não podemos simplesmente colocá-los frente a frente e declarar um vencedor, j�
 
 Dê uma olhada no diagrama acima: ao adicionar ou editar uma mensagem, a Context API pede ao React que reavalie as dependências e, se necessário, recrie os elementos. Em contextos mais complexos, isso pode ser tedioso e custoso para sua aplicação, especialmente em cenários onde passar propriedades através da árvore de componentes React é normal.
 
-![Fluxo do Observer](./docs/props-drilling.png)
+![Fluxo do Observer](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714943241/props-drilling_dakh3k.png)
 
 A Context API resolve o problema do "props drilling", mas o recálculo de dependências, como nos componentes X, Y e Z, muitas vezes é desnecessário, pois eles não dependem dessa informação.
 
