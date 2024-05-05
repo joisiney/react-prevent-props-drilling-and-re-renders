@@ -1,16 +1,15 @@
 import {FC} from 'react';
-import {MessageProvider} from './contexts/message';
-import './globals.css';
-import {SampleContextTodoTemplate} from './templates/todo/sample-context';
-import {SampleStoreTodoTemplate} from './templates/todo/sample-store';
+import {Route, BrowserRouter as Router, Routes} from 'react-router-dom';
+import {LayoutTemplate} from '@/templates/layout';
+import {HomePage} from '@/pages/home';
+import {ProfilePage} from '@/pages/profile';
 
-export const App:FC = () => {
-    return (
-        <div className='flex min-h-screen gap-6 bg-slate-50 items-center justify-center'>
-            <SampleStoreTodoTemplate/>
-            <MessageProvider>
-                <SampleContextTodoTemplate/>
-            </MessageProvider>
-        </div>
-    );
-};
+
+export const App:FC = () => (<Router>
+    <LayoutTemplate>
+        <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
+    </LayoutTemplate>
+</Router>);

@@ -1,5 +1,5 @@
 import {parseEventToFormData} from '@/utils/parseEventToFormData';
-import {FC, FormEvent, PropsWithChildren} from 'react';
+import {FC, FormEvent,FocusEvent, PropsWithChildren} from 'react';
 type IForm = {
     content:string
 }
@@ -13,8 +13,12 @@ export const FormMessageTodo:FC<PropsWithChildren<IProps>> = ({content, onSubmit
         const data = parseEventToFormData<IForm>(event);
         onSubmit(data);
     };
+
+    const handleBlur = (event:FocusEvent<HTMLInputElement>)=>{
+        event.target.form?.requestSubmit?.();
+    };
    
     return <form className='leading-relaxed' onSubmit={handleSubmit}>
-        <input defaultValue={content} name="content"/>
+        <input defaultValue={content} name="content" onBlur={handleBlur}/>
     </form>;
 };
