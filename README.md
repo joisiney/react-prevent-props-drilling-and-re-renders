@@ -1,9 +1,10 @@
+![React Observer?](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714994138/react-js-observer_agfwpd.png)
 
-# Context API vs Observer: Um Confronto Empolgante
+# CONTEXT API VS OBSERVER
 
 Não podemos simplesmente colocá-los frente a frente e declarar um vencedor, já que cada um tem seu papel específico. No entanto, o padrão Observer ainda é largamente subexplorado no universo do React. Recentemente, enfrentei desafios que me levaram a uma análise profunda dessas duas abordagens.
 
-## Context API
+## CONTEXT API
 
 ![Fluxo do Observer](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714785779/context-api_jl7xhp.png)
 
@@ -15,7 +16,7 @@ A Context API resolve o problema do "props drilling", mas o recálculo de depend
 
 Nesse processo de recálculo de dependências, um ou outro `useEffect` pode ser acionado acidentalmente, resultando em um verdadeiro inferno de re-renderização (embora isso geralmente seja erro do programador). Mas por que nos preocuparmos com isso se o componente sequer deveria estar ciente dessa atualização, não é mesmo?
 
-## Fluxo do Observer
+## FLUXO DO OBSERVER
 
 ![Fluxo da Context API](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714785779/observer_g8jexw.png)
 
@@ -58,7 +59,7 @@ $ yarn dev
 
 ## Desvendando o Funcionamento!
 
-Se você já está familiarizado com a programação orientada a domínio, então está no seu território! Este processo é simples e emocionante de trabalhar. Aqui está como você pode começar:
+Se você já está familiarizado DDD (domain driven design), então está no seu território! Este processo é simples e emocionante de trabalhar. Aqui está como você pode começar:
 
 Primeiro, criamos uma aba de perfil. Olhe só para essa `Entity`:
 ```typescript
