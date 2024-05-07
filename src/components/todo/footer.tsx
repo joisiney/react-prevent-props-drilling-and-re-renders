@@ -1,7 +1,7 @@
 import {FC, FormEventHandler} from 'react';
-import {Button} from '../ui/button';
-import {CardFooter} from '../ui/card';
-import {Input} from '../ui/input';
+import {Button} from '../shadcn-ui/button';
+import {CardFooter} from '../shadcn-ui/card';
+import {Input} from '../shadcn-ui/input';
 
 export const FooterTodo:FC<{onSubmit:FormEventHandler<HTMLFormElement>}> = ({onSubmit}) => (<form onSubmit={onSubmit}>
     <CardFooter className='space-x-2 pt-6'>

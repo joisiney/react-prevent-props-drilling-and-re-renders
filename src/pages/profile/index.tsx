@@ -2,9 +2,9 @@ import {Label} from '@radix-ui/react-label';
 import {usePage} from './index.hook';
 import {Success} from '@/components/success';
 import {HeaderTodo} from '@/components/todo/header';
-import {Button} from '@/components/ui/button';
-import {Card, CardContent, CardFooter} from '@/components/ui/card';
-import {Input} from '@/components/ui/input';
+import {Button} from '@/components/shadcn-ui/button';
+import {Card, CardContent, CardFooter} from '@/components/shadcn-ui/card';
+import {Input} from '@/components/shadcn-ui/input';
 
 export const ProfilePage:React.FC = () => {
     const page = usePage();

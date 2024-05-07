@@ -1,3 +1,5 @@
+### Aviso: Este repositório está em construção 🚧. Se interessou pelo assunto? Clique em "Watch" para receber atualizações em primeira mão 🙈.
+
 ![React Observer?](https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714994138/react-js-observer_agfwpd.png)
 
 # CONTEXT API VS OBSERVER
@@ -23,39 +25,6 @@ Nesse processo de recálculo de dependências, um ou outro `useEffect` pode ser 
 Vamos analisar o fluxograma acima: trabalhando com `observers`, não há um contexto geral. Apenas os componentes que têm `observers` serão atualizados. Ao adicionar/editar, apenas os componentes com `observers` serão atualizados. Assim, como a Context API resolve o problema de props drilling, os observers também o resolvem, porém com um ganho extra de não re-renderizar componentes que não estão ouvindo, como os componentes X, Y e Z. Eles sequer saberão que houve alteração no estado.
 
 Embora tenhamos um ganho de performance significativo, há cenários em que esse fluxo não é adequado, como quando há uma grande quantidade de elementos que utilizam `observers`. Neste cenário, recriar tudo é mais barato do que observar alteração de elemento por elemento.
-
-## 🚀 Tecnologias
-
-Principais tecnologias que utilizamos para desenvolver esta aplicação
-
-- [React JS](https://pt-br.reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwindcss](https://tailwindcss.com/)
-- [Chadcn](https://ui.shadcn.com/)
-- [Vite](https://vitejs.dev/)
-- [Radix](https://www.radix-ui.com/)
-- [React Router](https://reactrouter.com/en/main)
-
-
-## 💻 Começando
-
-**Clone o projeto e acesse a pasta**
-
-```bash
-$ git clone https://github.com/joisiney/react-prevent-props-drilling-and-re-renders && cd react-prevent-props-drilling-and-re-renders
-```
-
-**Siga os passos abaixo**
-
-```bash
-# Instale as dependências
-$ yarn
-
-# Para finalizar, execute
-$ yarn dev
-
-# Muito bem, o projeto foi iniciado!
-```
 
 ## Desvendando o Funcionamento!
 
@@ -172,75 +141,7 @@ E o `ExampleUsage`? Ele não precisa ser renderizado novamente! Isso acontece po
 
 ## Mapa mental do projeto
 
-```
-.
-├── app.tsx
-├── globals.css
-├── main.tsx
-├── application
-│   ├── entities
-│   │   ├── message.ts
-│   │   └── user.ts
-│   ├── helpers
-│   │   └── observer
-│   │       ├── create.hook.ts
-│   │       └── index.ts
-│   ├── models
-│   │   ├── message.ts
-│   │   └── user.ts
-│   ├── observers
-│   │   └── in-memory
-│   │       ├── messages.ts
-│   │       └── user.ts
-│   └── repositories
-│       └── in-memory
-│           ├── messages.ts
-│           └── user.ts
-├── components
-├── contexts
-│   └── message
-│       ├── hooks
-│       │   ├── index.ts
-│       │   ├── message.ts
-│       │   └── user.ts
-│       ├── index.context.ts
-│       ├── index.dto.ts
-│       ├── index.hook.ts
-│       └── index.tsx
-├── pages
-│   ├── home.tsx
-│   └── profile
-│       ├── index.hook.ts
-│       └── index.tsx
-├── templates
-│   ├── header.tsx
-│   ├── layout.tsx
-│   ├── todo-context
-│   │   ├── components
-│   │   │   ├── message
-│   │   │   │   ├── index.dto.ts
-│   │   │   │   ├── index.hook.ts
-│   │   │   │   └── index.tsx
-│   │   │   └── messages
-│   │   │       ├── index.hook.ts
-│   │   │       └── index.tsx
-│   │   ├── index.hook.ts
-│   │   └── index.tsx
-│   └── todo-observer
-│       ├── components
-│       │   ├── message
-│       │   │   ├── index.dto.ts
-│       │   │   ├── index.hook.ts
-│       │   │   └── index.tsx
-│       │   └── messages
-│       │       ├── index.hook.ts
-│       │       └── index.tsx
-│       ├── index.hook.ts
-│       └── index.tsx
-└── utils
-    ├── cn.ts
-    └── parseEventToFormData.ts
-```
+ Em desenvolvimento 🚧
 
 ## Vídeo de demonstração:
 
@@ -249,6 +150,38 @@ No vídeo abaixo, observamos que o lado do `observer` (store) realiza re-renderi
 <a href="https://vimeo.com/942328752" target="_blank">
     <img src="https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714743540/Captura_de_Tela_2024-05-03_a%CC%80s_10.32.33_zzftoc.png" style="max-width: 100%;">
 </a>
+## 🚀 Tecnologias
+
+Principais tecnologias que utilizamos para desenvolver esta aplicação
+
+- [React JS](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwindcss](https://tailwindcss.com/)
+- [Chadcn](https://ui.shadcn.com/)
+- [Vite](https://vitejs.dev/)
+- [Radix](https://www.radix-ui.com/)
+- [React Router](https://reactrouter.com/en/main)
+
+
+## 💻 Começando
+
+**Clone o projeto e acesse a pasta**
+
+```bash
+$ git clone https://github.com/joisiney/react-prevent-props-drilling-and-re-renders && cd react-prevent-props-drilling-and-re-renders
+```
+
+**Siga os passos abaixo**
+
+```bash
+# Instale as dependências
+$ yarn
+
+# Para finalizar, execute
+$ yarn dev
+
+# Muito bem, o projeto foi iniciado!
+```
 
 ## 🤔 Como contribuir
 

@@ -1,13 +1,14 @@
 import {FC} from 'react';
 import {MessageProvider} from '@/contexts/message';
-import {TodoContextTemplate} from '@/templates/todo-context';
-import {TodoObserverTemplate} from '@/templates/todo-observer';
+import {SampleContext} from './components/sample-context';
+import {SampleObserver} from './components/sample-observer';
 
-export const HomePage:FC = () => (
+
+export const TodoPage:FC = () => (
     <div className='flex min-h-screen gap-6 bg-slate-50 items-center justify-center'>
-        <TodoObserverTemplate/>
+        <SampleObserver/>
         <MessageProvider>
-            <TodoContextTemplate/>
+            <SampleContext/>
         </MessageProvider>
     </div>
 );

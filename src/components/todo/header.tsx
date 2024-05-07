@@ -1,5 +1,5 @@
 import {FC} from 'react';
-import {CardDescription, CardHeader, CardTitle} from '../ui/card';
+import {CardDescription, CardHeader, CardTitle} from '../shadcn-ui/card';
 type Props = {
     title:string;
     description:string;

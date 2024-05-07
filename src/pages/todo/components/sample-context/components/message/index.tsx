@@ -2,7 +2,7 @@ import {ImageMessageTodo} from '@/components/todo/message/Image';
 import {FieldsetMessageTodo} from '@/components/todo/message/fieldset';
 import {FormMessageTodo} from '@/components/todo/message/form';
 import {RootMessageTodo} from '@/components/todo/message/root';
-import {Badge} from '@/components/ui/badge';
+import {Badge} from '@/components/shadcn-ui/badge';
 import {FC} from 'react';
 import {useComponent} from './index.hook';
 import {MessageComponentDto} from './index.dto';

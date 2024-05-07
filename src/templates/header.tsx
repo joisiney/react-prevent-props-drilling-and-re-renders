@@ -1,6 +1,6 @@
 import {FC} from 'react';
 import {Link} from 'react-router-dom';
-import {buttonVariants} from '../components/ui/button';
+import {buttonVariants} from '../components/shadcn-ui/button';
 const linkClassName = buttonVariants({variant:'secondary', className:'text-left'});
 
 export const HeaderTemplate:FC = () => (
@@ -10,6 +10,7 @@ export const HeaderTemplate:FC = () => (
         <nav className='flex gap-y-5 flex-col'>
             <Link to="/" className={linkClassName}>Observer vs Context</Link>
             <Link to="/profile" className={linkClassName}>Perfil (Observer)</Link>
+            <Link to="/counter" className={linkClassName}>Counter (Observer)</Link>
         </nav>
     </header>
 );

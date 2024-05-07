@@ -1,5 +1,5 @@
 import {MessageEntity} from '@/application/entities/message';
-import {CardContent} from '@/components/ui/card';
+import {CardContent} from '@/components/shadcn-ui/card';
 import {FC} from 'react';
 import {useComponent} from './index.hook';
 import {Message} from '../message';
