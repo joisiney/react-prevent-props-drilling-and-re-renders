@@ -150,6 +150,8 @@ No vídeo abaixo, observamos que o lado do `observer` (store) realiza re-renderi
 <a href="https://vimeo.com/942328752" target="_blank">
     <img src="https://res.cloudinary.com/dmoi0mmuj/image/upload/v1714743540/Captura_de_Tela_2024-05-03_a%CC%80s_10.32.33_zzftoc.png" style="max-width: 100%;">
 </a>
+
+
 ## 🚀 Tecnologias
 
 Principais tecnologias que utilizamos para desenvolver esta aplicação
